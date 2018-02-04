@@ -1,4 +1,4 @@
-# SQL
+# SQL 
 
 ### Creting a table names department 
 
@@ -40,4 +40,38 @@ INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('654873219','Zacary',
 INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('745685214','Eric','Goldsmith',59);
 INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657245','Elizabeth','Doe',14);
 INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657246','Kumar','Swamy',14);
+
+
+### Selecting all the data from the employees table
+
+SELECT * FROM EMPLOYEES;
+
+
+### Select the last name of all employees.
+
+SELECT LASTNAME FROM EMPLOYEES;
+
+### Select the last name of all employees, without duplicates.
+
+SELECT DISTINCT LASTNAME FROM EMPLOYEES;
+
+### Select all the data of employees whose last name is "Smith".
+
+SELECT * FROM EMPLOYEES WHERE LastName = 'Smith';
+
+### Select all the data of employees whose last name is "Smith" or "Doe".
+
+SELECT * FROM EMPLOYEES WHERE LastName IN ('Smith','Doe');
+
+### Select all the data of employees that work in department 14.
+
+SELECT * FROM EMPLOYEES WHERE DEPARTMENT=14;
+
+###  Select all the data of employees that work in department 37 or department 77.
+
+SELECT * FROM EMPLOYEES WHERE DEPARTMENT IN (37,77);
+
+### Select all the data of employees whose last name begins with an "S".
+
+SELECT * FROM EMPLOYEES WHERE LastName like 'S%';
 
