@@ -41,6 +41,7 @@ INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('745685214','Eric','G
 INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657245','Elizabeth','Doe',14);
 INSERT INTO Employees(SSN,Name,LastName,Department) VALUES('845657246','Kumar','Swamy',14);
 
+## Select Queries 
 
 ### Selecting all the data from the employees table
 
