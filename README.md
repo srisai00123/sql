@@ -78,3 +78,6 @@ SELECT * FROM EMPLOYEES WHERE DEPARTMENT IN (37,77);
 
 SELECT * FROM EMPLOYEES WHERE LastName like 'S%';
 
+### Select the sum of all the departments' budgets.
+
+SELECT sum(BUDGET) AS Department_Budget FROM Departments;
