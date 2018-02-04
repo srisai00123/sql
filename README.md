@@ -1,5 +1,7 @@
 # SQL 
 
+## Creating and Inserting the Data 
+
 ### Creting a table names department 
 
 CREATE TABLE Departments (
