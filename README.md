@@ -95,3 +95,25 @@ SELECT SSN,E.NAME,E.LASTNAME,E.DEPARTMENT,D.CODE,D.NAME,D.BUDGET FROM EMPLOYEES 
  ### Select the name and last name of each employee, along with the name and budget of the employee's department.
  SELECT E.NAME,E.LASTNAME,D.NAME,D.BUDGET FROM EMPLOYEES E JOIN DEPARTMENTS D ON E.DEPARTMENT=D.CODE;
  
+ #### without labels
+ SELECT Employees.Name, LastName, Departments.Name AS DepartmentsName, Budget
+  FROM Employees INNER JOIN Departments
+  ON Employees.Department = Departments.Code;
+  
+  ### Select the name and last name of employees working for departments with a budget greater than $60,000.
+  
+  SELECT NAME,LASTNAME FROM EMPLOYEES WHERE DEPARTMENT IN (SELECT CODE FROM DEPARTMENTS WHERE BUDGET>60000);
+  
+  /* Without subquery */
+  
+ SELECT E.NAME,E.LASTNAME FROM EMPLOYEES E INNER JOIN DEPARTMENTS D ON E.DEPARTMENT=D.CODE WHERE D.BUDGET>60000;
+ 
+ SELECT E.NAME,E.LASTNAME FROM EMPLOYEES E INNER JOIN DEPARTMENTS D ON E.DEPARTMENT=D.CODE AND D.BUDGET>60000;
+ 
+ ### Select the departments with a budget larger than the average budget of all the departments
+ SELECT * FROM DEPARTMENTS WHERE BUDGET > (SELECT AVG(BUDGET) FROM DEPARTMENTS);
+ 
+ ### Select the names of departments with more than two employees.
+ 
+SELECT NAME FROM DEPARTMENTS WHERE CODE IN (SELECT DEPARTMENT FROM EMPLOYEES GROUP BY DEPARTMENT HAVING COUNT(*)>2)
+
