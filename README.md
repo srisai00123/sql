@@ -81,3 +81,17 @@ SELECT * FROM EMPLOYEES WHERE LastName like 'S%';
 ### Select the sum of all the departments' budgets.
 
 SELECT sum(BUDGET) AS Department_Budget FROM Departments;
+
+### Select the number of employees in each department (you only need to show the department code and the number of employees)
+
+select Department, count(*) from employees group by department;
+
+## JOINS
+
+### Select all the data of employees, including each employee's department's data.
+
+SELECT SSN,E.NAME,E.LASTNAME,E.DEPARTMENT,D.CODE,D.NAME,D.BUDGET FROM EMPLOYEES E INNER JOIN DEPARTMENTS D ON E.DEPARTMENT=D.CODE;
+ 
+ ### Select the name and last name of each employee, along with the name and budget of the employee's department.
+ SELECT E.NAME,E.LASTNAME,D.NAME,D.BUDGET FROM EMPLOYEES E JOIN DEPARTMENTS D ON E.DEPARTMENT=D.CODE;
+ 
